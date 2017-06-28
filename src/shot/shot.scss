@@ -5,6 +5,18 @@
 	margin-bottom: 40px;
 	padding: 10px;
 
+	@media screen and (max-width: 992px) {
+		width: calc(100% / 3 - 50px);
+	}
+
+	@media screen and (max-width: 768px) {
+		width: calc(100% / 2 - 50px);
+	}
+
+	@media screen and (max-width: 480px) {
+		width: calc(100%);
+	}
+
 	&-author {
 		height: 40px;
 
