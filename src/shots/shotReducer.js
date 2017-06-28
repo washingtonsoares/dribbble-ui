@@ -1,24 +1,24 @@
 const INITIAL_STATE = {
-	isFetching: false,
-	currentPage: 1,
+  isFetching: false,
+  currentPage: 1,
   shotList: []
 }
 
 const shotReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-		case 'FETCH_SHOTS':
-			return {
-				...state,
-				isFetching: true
-			}
-		case 'FETCH_SHOTS_SUCCESS':
+    case 'FETCH_SHOTS':
       return {
-				isFetching: false,
-				currentPage: state.currentPage + 1,
+        ...state,
+        isFetching: true
+      }
+    case 'FETCH_SHOTS_SUCCESS':
+      return {
+        isFetching: false,
+        currentPage: state.currentPage + 1,
         shotList: [
-					...state.shotList,
-					...action.payload
-				]
+          ...state.shotList,
+          ...action.payload
+        ]
       }
     default:
       return state

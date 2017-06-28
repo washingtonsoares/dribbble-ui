@@ -7,17 +7,12 @@ import './shots.scss'
 import {getShots} from './shotActions'
 
 class Shots extends Component {
-
-	componentDidMount () {
-		this.props.getShots()
-	}
-
   render () {
-		const {shotList} = this.props
+    const {shotList} = this.props
     return (
       <div>
         <ShotMenu />
-        <ShotList shots={shotList}/>
+        <ShotList shots={shotList} />
       </div>
     )
   }

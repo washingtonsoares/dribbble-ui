@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Shot from '../shot/shot'
-import ReduxInfiniteScroll from 'redux-infinite-scroll';
+import ReduxInfiniteScroll from 'redux-infinite-scroll'
 import {getShots} from './shotActions'
 import InfiniteScroll from 'redux-infinite-scroll'
 
@@ -12,14 +12,13 @@ class ShotList extends Component {
     super(props)
   }
 
-	_loadMore() {
-		let current = this.props.currentPage
-		if(!this.props.isFetching){
-			this.props.getShots(current++)
-		}
-	}
+  _loadMore () {
+    if (!this.props.isFetching) {
+      this.props.getShots()
+    }
+  }
 
-	_renderShots() {
+  _renderShots () {
     return this.props.shots.map(
 				(shot, i) => <Shot shot={shot} key={i} />
 			)
@@ -27,11 +26,11 @@ class ShotList extends Component {
 
   render () {
     return (
-				<InfiniteScroll
-					className='shots'
-          items={this._renderShots()}
-					elementIsScrollable={false}
-          loadMore={this._loadMore.bind(this)}
+      <InfiniteScroll
+        className='shots'
+        items={this._renderShots()}
+        elementIsScrollable={false}
+        loadMore={this._loadMore.bind(this)}
         />
 	  )
   }
@@ -42,8 +41,7 @@ ShotList.propTypes = {
 }
 
 const mapStateToProps = state => ({
-   isFetching: state.shot.isFetching,
-	 currentPage: state.shot.currentPage
+  isFetching: state.shot.isFetching
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({getShots}, dispatch)
