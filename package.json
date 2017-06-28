@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "server": "standard --fix && webpack-dev-server --progress --colors --inline --hot --port 3000",
+    "server": "standard --fix && webpack-dev-server --progress --open  --colors --inline --hot --port 3000",
     "build":  "standard --fix && webpack --progress -p"
   },
   "devDependencies": {
