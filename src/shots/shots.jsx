@@ -9,10 +9,6 @@ import Shot from '../shot/shot'
 import {getShots} from './shotActions'
 
 class Shots extends Component {
-	constructor (props) {
-    super(props)
-  }
-
   _loadMore () {
     if (!this.props.isFetching) {
       this.props.getShots()
@@ -20,9 +16,7 @@ class Shots extends Component {
   }
 
   _renderShots (shotList) {
-    return shotList.map(
-				(shot, i) => <Shot shot={shot} key={i} />
-			)
+    return shotList.map((shot, i) => <Shot shot={shot} key={i} />)
   }
 
   render () {
@@ -30,12 +24,11 @@ class Shots extends Component {
     return (
       <div>
         <ShotMenu />
-				<InfiniteScroll
-	        className='shots'
-	        items={this._renderShots(shotList)}
-	        elementIsScrollable={false}
-	        loadMore={this._loadMore.bind(this)}
-	        />
+        <InfiniteScroll
+          className='shots'
+          items={this._renderShots(shotList)}
+          elementIsScrollable={false}
+          loadMore={this._loadMore.bind(this)} />
       </div>
     )
   }
@@ -43,7 +36,7 @@ class Shots extends Component {
 
 const mapStateToProps = state => ({
   shotList: state.shot.shotList,
-	isFetching: state.shot.isFetching
+  isFetching: state.shot.isFetching
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({getShots}, dispatch)

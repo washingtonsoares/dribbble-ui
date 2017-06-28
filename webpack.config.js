@@ -15,7 +15,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       module: path.join(__dirname, 'node_modules'),
-			scss: path.resolve(__dirname, './src/common')
+      scss: path.resolve(__dirname, './src/common')
     }
   },
   plugins: [
@@ -33,8 +33,8 @@ module.exports = {
         use: ['css-loader', 'sass-loader']
       })
     }, {
-	    test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
-	    loader: 'file-loader'
+      test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
+      loader: 'file-loader'
     }]
   }
 }

@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "server": "webpack-dev-server --progress --colors --inline --hot --port 3000",
-    "build": "standard && webpack --progress -p"
+    "server": "standard --fix && webpack-dev-server --progress --colors --inline --hot --port 3000",
+    "build":  "standard --fix && webpack --progress -p"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -35,7 +35,7 @@
   },
   "standard": {
     "ignore": [
-      "/exemplos/"
+      "/node_modules/"
     ]
   }
 }
