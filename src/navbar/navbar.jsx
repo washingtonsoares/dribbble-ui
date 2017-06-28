@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default props => (
   <nav>
-    <a href='/html/'>Dribble</a>
+    <Link to="/shots">
+			Dribbble
+		</Link>
   </nav>
 )

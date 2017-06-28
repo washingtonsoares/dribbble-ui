@@ -6,7 +6,7 @@ import InfiniteScroll from 'redux-infinite-scroll'
 import './shots.scss'
 import ShotMenu from '../shot-menu/shot-menu'
 import Shot from '../shot/shot'
-import {getShots} from './shotActions'
+import {getShots} from './shots.actions'
 
 class Shots extends Component {
   _loadMore () {

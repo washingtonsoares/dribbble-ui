@@ -20,6 +20,8 @@ const shotReducer = (state = INITIAL_STATE, action) => {
           ...action.payload
         ]
       }
+		case 'FETCH_SHOT':
+      return state
     default:
       return state
   }

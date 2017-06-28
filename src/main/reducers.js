@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import shotReducer from '../shots/shotReducer'
+import shotsReducer from '../shots/shots.reducer'
+import shotDetailReducer from '../shot-detail/shot-detail.reducer'
 
 const rootReducer = combineReducers({
-  shot: shotReducer
+  shot: shotsReducer,
+	shotDetail: shotDetailReducer
 })
 
 export default rootReducer
