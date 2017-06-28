@@ -10,6 +10,14 @@ export const getShotDetails = (shotId) => {
 	}
 }
 
+export const likeShot = (shotId) => {
+  const request = axios.post(`${BASE_URL}/shots/${shotId}/like?access_token=${ACCESS_TOKEN}`)
+	return {
+		type: 'LIKE_SHOT',
+		payload: request
+	}
+}
+
 export const reset = () => {
 	return {
 		type: 'RESET'

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { getShotDetails, reset} from './shot-detail.actions'
+import { getShotDetails, reset, likeShot} from './shot-detail.actions'
 
 class ShotsDetail extends Component {
 
@@ -14,12 +14,19 @@ class ShotsDetail extends Component {
 		this.props.reset()
 	}
 
+	likeShot(shotId) {
+		this.props.likeShot(shotId)
+	}
+
   render () {
 		const {shot} = this.props
 		if (shot.id) {
       return (
 				<div>
 					<img src={shot.images.teaser} />
+					<a href="javascript:void(0)" onClick={() => this.likeShot(shot.id)}>
+						Like post
+					</a>
 				</div>
 			)
     }
@@ -31,6 +38,6 @@ const mapStateToProps = state => ({
   shot: state.shotDetail
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({getShotDetails, reset}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({getShotDetails, reset, likeShot}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShotsDetail)
