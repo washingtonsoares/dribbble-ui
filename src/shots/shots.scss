@@ -1,3 +1,5 @@
+@import '~scss/variables';
+
 body {
 	background: #f5f7f5;
 }
@@ -10,7 +12,7 @@ body {
 	width: 80%;
 	margin: 0 auto;
 
-	@media screen and (max-width: 480px) {
+	@media screen and ($xs-display) {
 		flex-direction: column;
 	}
 

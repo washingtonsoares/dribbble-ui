@@ -14,7 +14,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      module: path.join(__dirname, 'node_modules')
+      module: path.join(__dirname, 'node_modules'),
+			scss: path.resolve(__dirname, './src/common')
     }
   },
   plugins: [
