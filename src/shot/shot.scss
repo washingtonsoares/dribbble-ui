@@ -1,0 +1,25 @@
+.shot {
+	height: 220px;
+	background: #FFF;
+	width: calc(100% / 4 - 50px);
+	margin-bottom: 40px;
+	padding: 10px;
+
+	&-author {
+		height: 40px;
+
+		img {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	figure {
+		 margin: 0;
+
+		 img {
+		 	width: 100%;
+		 }
+	}
+
+}

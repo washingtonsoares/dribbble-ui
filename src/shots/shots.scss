@@ -1,0 +1,17 @@
+body {
+	background: #f5f7f5;
+}
+
+.shots{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 1000px;
+	margin: 0 auto;
+
+	.loader {
+		width: 100%;
+		text-align: center;
+	}
+}
