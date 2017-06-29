@@ -27,7 +27,7 @@ class Shot extends Component {
           </a>
         </div>
       </div>
-	  )
+    )
   }
 }
 

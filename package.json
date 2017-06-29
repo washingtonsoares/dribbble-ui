@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "server": "webpack-dev-server --progress --open  --colors --inline --hot --port 3000 --host 0.0.0.0",
-    "build": "webpack --progress -p",
+    "server": "standard --fix && webpack-dev-server --progress --open  --colors --inline --hot --port 3000 --host 0.0.0.0",
+    "build":  "standard --fix && webpack --progress -p",
     "test": "jest"
   },
   "devDependencies": {
@@ -52,6 +52,7 @@
   "standard": {
     "ignore": [
       "/node_modules/"
-    ]
+    ],
+		"globals": [ "describe", "it", "expect", "afterEach"]
   }
 }

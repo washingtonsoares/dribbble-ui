@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { getShotDetails, reset, likeShot} from './shot-detail.actions'
+import { getShotDetails, reset, likeShot } from './shot-detail.actions'
 import './shot-detail.scss'
 import iconLike from './assets/icon-shotstat-like.png'
 import Shot from '../shot/shot'
@@ -25,13 +25,13 @@ class ShotsDetail extends Component {
     if (shot.id) {
       return (
         <div className='shot-detail'>
-          <Shot shot={shot} imageType='normal'/>
-					<div className='content-like-shot'>
-						<div className='like-shot' onClick={() => likeShot(shot.id)}>
-							<span>Like </span>
-							<img src={iconLike} />
-						</div>
-					</div>
+          <Shot shot={shot} imageType='normal' />
+          <div className='content-like-shot'>
+            <div className='like-shot' onClick={() => likeShot(shot.id)}>
+              <span>Like </span>
+              <img src={iconLike} />
+            </div>
+          </div>
         </div>
       )
     }

@@ -2,18 +2,18 @@ import React from 'react'
 import { mount } from 'enzyme'
 import Shot from './shot'
 
-function setup() {
+function setup () {
   const props = {
     shot: {
-			id: 1,
-			title: 'shot title',
-			images: [],
-			user: {
-				name: 'name',
-				username: 'username',
-				avatar_url: 'http://avatar.com'
-			}
-		}
+      id: 1,
+      title: 'shot title',
+      images: [],
+      user: {
+        name: 'name',
+        username: 'username',
+        avatar_url: 'http://avatar.com'
+      }
+    }
   }
 
   const enzymeWrapper = mount(<Shot {...props} />)
@@ -25,10 +25,9 @@ function setup() {
 }
 
 describe('Shot', () => {
-	it('should render shot', () => {
-		const { enzymeWrapper } = setup()
+  it('should render shot', () => {
+    const { enzymeWrapper } = setup()
 
-		expect(enzymeWrapper.find('.shot-author').text()).toEqual('name');
-	})
-
+    expect(enzymeWrapper.find('.shot-author').text()).toEqual('name')
+  })
 })

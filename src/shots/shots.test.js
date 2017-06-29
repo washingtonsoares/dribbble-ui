@@ -19,9 +19,9 @@ describe('async actions', () => {
   })
 
   it('creates FETCH_SHOTS_SUCCESS when fetching shots', () => {
-		nock(host)
+    nock(host)
       .get(/shots/)
-      .reply(200, [{id: 1}] )
+      .reply(200, [{id: 1}])
 
     const expectedActions = [
       { type: 'FETCH_SHOTS' },
@@ -29,8 +29,8 @@ describe('async actions', () => {
     ]
 
     const store = mockStore({
-			 shot: { }
-		})
+      shot: {}
+    })
 
     return store.dispatch(actions.getShots()).then(() => {
       expect(store.getActions()).toEqual(expectedActions)
