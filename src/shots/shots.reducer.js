@@ -9,6 +9,7 @@ const INITIAL_STATE = {
 const shotReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'FETCH_SHOTS':
+      console.log('FETCH_SHOTS')
       return {
         ...state,
         isFetching: true

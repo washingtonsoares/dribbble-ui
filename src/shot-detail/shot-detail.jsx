@@ -5,6 +5,7 @@ import { getShotDetails, reset, likeShot } from './shot-detail.actions'
 import './shot-detail.scss'
 import iconLike from './assets/icon-shotstat-like.png'
 import Shot from '../shot/shot'
+import Loader from '../common/loader/loader'
 
 class ShotsDetail extends Component {
   componentDidMount () {
@@ -35,7 +36,7 @@ class ShotsDetail extends Component {
         </div>
       )
     }
-    return <div>Loading...</div>
+    return <Loader msg='Carregando shot...' />
   }
 }
 

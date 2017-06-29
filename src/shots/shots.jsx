@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import InfiniteScroll from 'redux-infinite-scroll'
-
+import Loader from '../common/loader/loader'
 import './shots.scss'
 import ShotMenu from '../shot-menu/shot-menu'
 import Shot from '../shot/shot'
@@ -20,7 +20,7 @@ class Shots extends Component {
   }
 
   render () {
-    const {shotList} = this.props
+    const {shotList, isFetching} = this.props
     return (
       <div>
         <ShotMenu />
@@ -29,6 +29,7 @@ class Shots extends Component {
           items={this._renderShots(shotList)}
           elementIsScrollable={false}
           loadMore={this._loadMore.bind(this)} />
+        {isFetching && <Loader msg='Carregando shots...' position={shotList.length ? 'bottom' : 'top'} />}
       </div>
     )
   }
