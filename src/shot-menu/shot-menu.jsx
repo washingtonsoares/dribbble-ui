@@ -10,23 +10,23 @@ class ShotMenu extends Component {
     this.props.searchShots(value)
   }
 
-	_resizeShots(size) {
-		this.props.resizeShots(size)
-	}
+  _resizeShots (size) {
+    this.props.resizeShots(size)
+  }
 
   render () {
     return (
       <nav className='shot-menu'>
-				<div className='menu-actions'>
-					<span className='hidden-xs resize-shots'>
-						<a href='javascript:void(0)' onClick={() => this._resizeShots('small')}>pequeno </a>
-						<a href='javascript:void(0)' onClick={() => this._resizeShots('medium')}>medio </a>
-						<a href='javascript:void(0)' onClick={() => this._resizeShots('large')}>grande</a>
-					</span>
-					<form className='form-search'>
-	          <input type='text' placeholder='Search shots by title' onKeyUp={(e) => this._searchShots(e)} />
-	        </form>
-				</div>
+        <div className='menu-actions'>
+          <span className='hidden-xs resize-shots'>
+            <a href='javascript:void(0)' onClick={() => this._resizeShots('small')}>pequeno </a>
+            <a href='javascript:void(0)' onClick={() => this._resizeShots('medium')}>medio </a>
+            <a href='javascript:void(0)' onClick={() => this._resizeShots('large')}>grande</a>
+          </span>
+          <form className='form-search'>
+            <input type='text' placeholder='Search shots by title' onKeyUp={(e) => this._searchShots(e)} />
+          </form>
+        </div>
       </nav>
     )
   }

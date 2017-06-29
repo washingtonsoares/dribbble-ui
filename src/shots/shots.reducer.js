@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   isFetching: false,
   currentPage: 1,
   isSearching: false,
-	shotsSize: 'small',
+  shotsSize: 'small',
   shotList: []
 }
 
@@ -28,11 +28,11 @@ const shotReducer = (state = INITIAL_STATE, action) => {
         isSearching: true,
         shotList: _filterShots(state.shotList, action.payload)
       }
-		case 'RESIZE_SHOTS':
+    case 'RESIZE_SHOTS':
       return {
-				...state,
-				shotsSize: action.payload 
-			}
+        ...state,
+        shotsSize: action.payload
+      }
     case 'RESET_STATE':
       return INITIAL_STATE
     default:

@@ -34,7 +34,7 @@ export const searchShots = (query) => {
 }
 
 export const resizeShots = (size) => {
-	return {
+  return {
     type: 'RESIZE_SHOTS',
     payload: size
   }

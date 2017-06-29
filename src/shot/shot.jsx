@@ -5,17 +5,15 @@ import './shot.scss'
 const DRIBBBLE_URL = 'https://dribbble.com/'
 
 class Shot extends Component {
-
-	_getShotImage(imageType, shotSize) {
-		if(imageType) {
-			return imageType
-		} else if(['medium', 'large'].includes(shotSize)) {
-			return 'normal'
-		}
-		else {
-			return 'teaser'
-		}
-	}
+  _getShotImage (imageType, shotSize) {
+    if (imageType) {
+      return imageType
+    } else if (['medium', 'large'].includes(shotSize)) {
+      return 'normal'
+    } else {
+      return 'teaser'
+    }
+  }
 
   render () {
     const {shot, imageType, shotSize} = this.props

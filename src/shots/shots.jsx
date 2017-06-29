@@ -37,7 +37,7 @@ class Shots extends Component {
 const mapStateToProps = state => ({
   shotList: state.shot.shotList,
   isFetching: state.shot.isFetching,
-	shotsSize: state.shot.shotsSize
+  shotsSize: state.shot.shotsSize
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({getShots}, dispatch)
