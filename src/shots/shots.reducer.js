@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   isFetching: false,
   currentPage: 1,
+	isSearching: false,
   shotList: []
 }
 
@@ -20,11 +21,23 @@ const shotReducer = (state = INITIAL_STATE, action) => {
           ...action.payload
         ]
       }
-    case 'FETCH_SHOT':
-      return state
+		case 'SEARCH_SHOTS':
+			return {
+				...state,
+				isSearching: true,
+				shotList: _filterShots(state.shotList, action.payload)
+			}
+		case 'RESET_STATE':
+			return INITIAL_STATE
     default:
       return state
   }
+}
+
+function _filterShots(shotList, query) {
+	return shotList.filter((shot) => {
+		return shot.title.toLowerCase().includes(query.toLowerCase())
+	})
 }
 
 export default shotReducer

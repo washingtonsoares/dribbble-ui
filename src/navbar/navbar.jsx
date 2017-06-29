@@ -5,7 +5,7 @@ import './navbar.scss'
 
 export default props => (
   <nav className='main-nav'>
-    <a href='/'>
+    <a href='#/'>
 			<img src={logo} />
 		</a>
   </nav>

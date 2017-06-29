@@ -1,0 +1,26 @@
+@import '~scss/variables';
+
+.shot-menu {
+	text-align: right;
+	margin: 10px 0 10px 0;
+
+	@media screen and ($sm-display) {
+		text-align: center;
+	}
+
+	.form-search {
+		width: 80%;
+		margin: 0 auto;
+		input {
+			outline: none;
+			border: 1px solid #ccc;
+			height: 30px;
+			padding-left: 10px;
+			border-radius: 5px;
+
+			@media screen and ($sm-display) {
+				width: calc(100% - 50px);
+			}
+		}
+	}
+}

@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as actions from './shots.actions'
-import axios from 'axios' // v0.15.3
+import axios from 'axios'
 import httpAdapter from 'axios/lib/adapters/http'
 import nock from 'nock'
 
@@ -33,7 +33,6 @@ describe('async actions', () => {
 		})
 
     return store.dispatch(actions.getShots()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions)
     })
   })
