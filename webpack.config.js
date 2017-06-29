@@ -9,7 +9,8 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    contentBase: './public'
+    contentBase: './public',
+		disableHostCheck: true
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -33,7 +34,7 @@ module.exports = {
         use: ['css-loader', 'sass-loader']
       })
     }, {
-      test: /\.woff|.woff2|.ttf|.eot|.png|.svg*.*$/,
+      test: /\.woff|.woff2|.ttf|.eot|.png|.gif|.svg*.*$/,
       loader: 'file-loader'
     }]
   }
