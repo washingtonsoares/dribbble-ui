@@ -16,7 +16,7 @@ class Shots extends Component {
   }
 
   _renderShots (shotList) {
-    return shotList.map((shot, i) => <Shot shot={shot} key={i} />)
+    return shotList.map((shot, i) => <Shot shot={shot} shotSize={this.props.shotsSize} key={i} />)
   }
 
   render () {
@@ -36,7 +36,8 @@ class Shots extends Component {
 
 const mapStateToProps = state => ({
   shotList: state.shot.shotList,
-  isFetching: state.shot.isFetching
+  isFetching: state.shot.isFetching,
+	shotsSize: state.shot.shotsSize
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({getShots}, dispatch)

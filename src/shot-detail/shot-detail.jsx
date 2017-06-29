@@ -16,7 +16,7 @@ class ShotsDetail extends Component {
     this.props.reset()
   }
 
-  likeShot (shotId) {
+  _likeShot (shotId) {
     this.props.likeShot(shotId)
   }
 
@@ -25,9 +25,9 @@ class ShotsDetail extends Component {
     if (shot.id) {
       return (
         <div className='shot-detail'>
-          <Shot shot={shot} imageType='normal' />
+          <Shot shot={shot} imageType='hidpi' />
           <div className='content-like-shot'>
-            <div className='like-shot' onClick={() => likeShot(shot.id)}>
+            <div className='like-shot' onClick={() => this._likeShot(shot.id)}>
               <span>Like </span>
               <img src={iconLike} />
             </div>

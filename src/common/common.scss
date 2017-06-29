@@ -1,0 +1,7 @@
+@import '~scss/variables';
+
+.hidden-xs {
+	@media screen and ($sm-display) {
+		display: none;
+	}
+}
