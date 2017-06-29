@@ -26,6 +26,9 @@ $ yarn build
 ```bash
 $ yarn test
 ```
+
+Este projeto segue o padrão [StandardJS](https://standardjs.com).
+
 ## Autores
 
 **Washington Soares**
