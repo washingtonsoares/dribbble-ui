@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 export default props => (
   <nav>
-    <Link to="/shots">
+    <Link to='/shots'>
 			Dribbble
 		</Link>
   </nav>

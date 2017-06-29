@@ -4,7 +4,7 @@ import shotDetailReducer from '../shot-detail/shot-detail.reducer'
 
 const rootReducer = combineReducers({
   shot: shotsReducer,
-	shotDetail: shotDetailReducer
+  shotDetail: shotDetailReducer
 })
 
 export default rootReducer

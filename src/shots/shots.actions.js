@@ -15,8 +15,8 @@ export const getShots = () => {
 
 export const getShotDetails = (shotId) => {
   const request = axios.get(`${BASE_URL}/shots/${shotId}?&access_token=${ACCESS_TOKEN}`)
-	return {
-		type: 'FETCH_SHOT',
-		payload: request
-	}
+  return {
+    type: 'FETCH_SHOT',
+    payload: request
+  }
 }

@@ -33,7 +33,7 @@ module.exports = {
         use: ['css-loader', 'sass-loader']
       })
     }, {
-      test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
+      test: /\.woff|.woff2|.ttf|.eot|.png|.svg*.*$/,
       loader: 'file-loader'
     }]
   }

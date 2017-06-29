@@ -1,0 +1,26 @@
+.shot-detail {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	.shot {
+		width: calc(100% / 2 - 50px);
+		height: auto;
+	}
+
+	.like-shot {
+		margin-left: 20px;
+		cursor: pointer;
+		display: inline-block;
+		float: right;
+
+		img {
+			width: 25px;
+			height: 25px;
+			position: relative;
+			top: 5px;
+		}
+	}
+
+}
