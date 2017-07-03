@@ -3,17 +3,16 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 
 	.shot {
-		width: calc(100% / 2 - 50px);
 		height: auto;
+		width: 500px;
+		margin-right: 20px;
 	}
 
 	.like-shot {
-		margin-left: 20px;
 		cursor: pointer;
-		display: inline-block;
-		float: right;
 
 		img {
 			width: 25px;
