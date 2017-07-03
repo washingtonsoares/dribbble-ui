@@ -9,8 +9,26 @@ import Shot from '../shot/shot'
 import {getShots} from './shots.actions'
 
 class Shots extends Component {
+  constructor (props) {
+    super(props)
+    this.state = { currentlyDisplayed: [] }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const {shotList, searchTerm} = nextProps
+    this.setState({
+      currentlyDisplayed: this._filterShots(shotList, searchTerm)
+    })
+  }
+
+  _filterShots (shotList, query) {
+    return shotList.filter((shot) => {
+      return shot.title.toLowerCase().includes(query.toLowerCase())
+    })
+  }
+
   _loadMore () {
-    if (!this.props.isFetching) {
+    if (!this.props.isFetching && !this.props.isSearching) {
       this.props.getShots()
     }
   }
@@ -20,16 +38,16 @@ class Shots extends Component {
   }
 
   render () {
-    const {shotList, isFetching} = this.props
+    const {isFetching} = this.props
     return (
       <div>
         <ShotMenu />
         <InfiniteScroll
           className='shots'
-          items={this._renderShots(shotList)}
+          items={this._renderShots(this.state.currentlyDisplayed)}
           elementIsScrollable={false}
           loadMore={this._loadMore.bind(this)} />
-        {isFetching && <Loader msg='Carregando shots...' position={shotList.length ? 'bottom' : 'top'} />}
+        {isFetching && <Loader msg='Carregando shots...' position={this.state.currentlyDisplayed.length ? 'bottom' : 'top'} />}
       </div>
     )
   }
@@ -38,7 +56,9 @@ class Shots extends Component {
 const mapStateToProps = state => ({
   shotList: state.shot.shotList,
   isFetching: state.shot.isFetching,
-  shotsSize: state.shot.shotsSize
+  isSearching: state.shot.isSearching,
+  shotsSize: state.shot.shotsSize,
+  searchTerm: state.shot.searchTerm
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({getShots}, dispatch)

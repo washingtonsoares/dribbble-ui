@@ -4,8 +4,7 @@ const ACCESS_TOKEN = '7be90c891d972d92b9451c465e51d0796932a45a5f11f60d1842398348
 
 export const getShots = () => {
   return (dispatch, getState) => {
-    let {currentPage, isSearching} = getState().shot
-    if (isSearching) return
+    let {currentPage} = getState().shot
 
     dispatch({ type: 'FETCH_SHOTS' })
     return axios.get(`${BASE_URL}/shots?page=${currentPage}&per_page=12&access_token=${ACCESS_TOKEN}`)
@@ -28,7 +27,7 @@ export const searchShots = (query) => {
     if (query) {
       dispatch({type: 'SEARCH_SHOTS', payload: query})
     } else {
-      dispatch({ type: 'RESET_STATE' })
+      dispatch({ type: 'RESET_SEARCH' })
     }
   }
 }
