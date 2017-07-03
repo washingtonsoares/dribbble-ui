@@ -1,6 +1,6 @@
-# [DribbbleUI](https://github.com/washingtonsoares/dribbble-ui)
+# [DribbbleUI](https://dribbble-ui.herokuapp.com)
 
-[![Banner](https://upload.wikimedia.org/wikipedia/commons/3/32/Dribbble_logo.png)](https://github.com/washingtonsoares/dribbble-ui)
+[![Banner](https://upload.wikimedia.org/wikipedia/commons/3/32/Dribbble_logo.png)](https://dribbble-ui.herokuapp.com)
 
 Frontend com algumas das principais funcionalidades do site [dribbble.com](https://dribbble.com).
 
