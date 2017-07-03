@@ -16,6 +16,7 @@ const shotReducer = (state = INITIAL_STATE, action) => {
       }
     case 'FETCH_SHOTS_SUCCESS':
       return {
+				...state,
         isFetching: false,
         currentPage: state.currentPage + 1,
         shotList: [
